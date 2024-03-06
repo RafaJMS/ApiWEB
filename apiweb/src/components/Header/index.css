@@ -1,0 +1,48 @@
+.header-box{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    gap: 5rem;
+    align-items: center;
+    border-bottom: 1px solid black;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.486);
+}
+
+.titleheader-box{
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+}
+
+.headertype-box{
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    width: 65%;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.title-header{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.title-img{
+    width: 40px;
+}
+
+a{
+    color: black;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+a:hover{
+    color: darkgreen;
+    cursor: pointer;
+    transform: scale(1.3);
+}

@@ -1,68 +1,26 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import axios from 'axios'
 import './App.css'
+import Home from './pages/Home'
+import Cliente from './pages/Clientes'
+import Funcionario from './pages/Funcionarios'
+import Veiculos from './pages/Veiculos'
+import Header from './components/Header'
+import { Route, Routes } from 'react-router'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [cliente, setCliente] = useState()
-  const [funcionario, setFuncionario] = useState()
-
-async function readCliente(){
-  let response = await axios.get("https://localhost:7232/api/Clientes")
-  setCliente(response.data)
-}
-
-async function readFuncionario(){
-  let response = await axios.get("https://localhost:7232/api/Funcionarios")
-  setFuncionario(response.data)
-}
-useEffect(()=>{
-  readCliente()
-  readFuncionario()
-},)
-
   return (
     <>
-      <h1>Teste</h1>
-      <div className="card">
-      
-      <ul className='lista-cliente' >
-        {cliente && cliente.map((data)=>(
-          <div className='grupo-lista' key={data.id}>
-
-            <li className='campo-lista'>Nome: {data.nome}</li>
-            <li className='campo-lista'>CPF: {data.cpf}</li>
-
-            </div>
-        ))}
-        </ul>
-
-        {/* <ul className='lista-cliente' >
-        {funcionario && funcionario.map((data)=>(
-          <div className='grupo-lista' key={data.id}>
-            
-            <li className='campo-lista'>Nome: {data.nome}</li>
-            <li className='campo-lista'>CPF: {data.cpf}</li>
-
-            </div>
-        ))}
-        
-        </ul> */}
-
-        {/* <ul className='lista-cliente' >
-        {data && data.map((data)=>(
-          <div className='grupo-lista' key={data.id}>
-
-            <li className='campo-lista'>Nome: {data.nome}</li>
-            <li className='campo-lista'>CPF: {data.cpf}</li>
-
-            </div>
-        ))}
-        
-        </ul> */}
+    
+      <h1>Bem vindo ao Lava Bolhas do Bob</h1>
+      <div className="major-box">
+      <Header/>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path={'/clientes'} element={<Cliente/>}/>
+        <Route path={'/funcionarios'} element={<Funcionario/>}/>
+    <Route path={'/veiculos'} element={<Veiculos/>}/> 
+      </Routes>
       </div>
+
     </>
   )
 }
