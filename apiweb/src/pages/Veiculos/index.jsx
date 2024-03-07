@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import axios from "axios"
 
 
 
@@ -6,23 +7,51 @@ import { useEffect, useState } from "react"
 export default function Veiculo(){
     const [veiculo, setVeiculo] = useState()
 
-    useEffect(() => {
-        let response =  axios.get("https://localhost:7055/api/Veiculos")
+async function readVeiculo(){
+        let response = await axios.get("https://localhost:7232/api/Veiculos")
+        console.log(response.data[0])
         setVeiculo(response.data)
+    }
+
+    useEffect(() => {
+        readVeiculo()
     }, [])
    
     return (
         <>
-         <ul className='lista-veiculo' >
-    {veiculo && veiculo.map((data)=>(
-        <div className='grupo-lista' key={data.id}>
-        <li className='campo-lista'>Tipo: {data.tipo}</li>
-        <li className='campo-lista'>Modelo: {data.modelo}</li>
-        <li className='campo-lista'>Placa: {data.placa}</li>
-        <li className='campo-lista'>Preco: {data.preco}</li>
+        
+        <div className="veiculos">
+        <br></br>
+        <h2>Tabela Veiculos</h2>
+        <br></br>
+        <table class="table">
+              <thead>
+                 <tr>
+                   <th scope="col">Id</th>
+                   <th scope="col">Tipo</th>
+                   <th scope="col">Modelo</th>
+                   <th scope="col">Placa</th>
+                   <th scope="col">Preço do Serviço</th>
+                 </tr>
+              </thead>
+        {
+            veiculo && veiculo.map((data) => (
+              
+              <tbody>
+                 <tr>
+                   <th scope="row">{data.id}</th>
+                   <td>{data.tipo}</td>
+                   <td>{data.modelo}</td>
+                   <td>{data.placa}</td>
+                   <td>{data.preco}</td>
+                 </tr>
+                </tbody>
+               
+                    
+            ))
+        }
+         </table>
         </div>
-    ))}
-    </ul> 
         </>
     )
    

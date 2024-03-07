@@ -9,15 +9,13 @@ import { Route, Routes } from 'react-router'
 function App() {
   return (
     <>
-    
-      <h1>Bem vindo ao Lava Bolhas do Bob</h1>
       <div className="major-box">
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path={'/clientes'} element={<Cliente/>}/>
-        <Route path={'/funcionarios'} element={<Funcionario/>}/>
-    <Route path={'/veiculos'} element={<Veiculos/>}/> 
+        <Route path={'/cliente'} element={<Cliente/>}/>
+        <Route path={'/funcionario'} element={<Funcionario/>}/>
+        <Route path={'/veiculo'} element={<Veiculos/>}/> 
       </Routes>
       </div>
 
