@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import {IMaskInput} from "react-imask";
+import Form from "react-bootstrap/Form";
 
   export default function Cliente(){
     const [cliente, setCliente] = useState()
@@ -20,7 +22,7 @@ import axios from "axios"
  return (
   <>
         
-  <div className="clientes">
+  <div className="table-box">
   <br></br>
   <h2>Tabela Clientes</h2>
   <br></br>
@@ -40,7 +42,14 @@ import axios from "axios"
            <tr>
              <th scope="row">{data.id}</th>
              <td>{data.nome}</td>
-             <td>{data.cpf}</td>
+             <td className="mask-td"><Form.Control
+                      as = {IMaskInput}
+                      mask="000.000.000-00"
+                      defaultValue={data.cpf}
+                      className="mask-input"
+                      readOnly
+                      disabled
+                      /></td>
              <td>{data.veiculos[0].placa}</td>
            </tr>
           </tbody>

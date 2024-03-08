@@ -6,7 +6,11 @@ export default function Home(){
     return(
         <>
             <div className="home-box">
-            <h1 className="title">Site de controle Lava Bolhas do Bob</h1>
+                <div className="front-box">
+                    <h1 className="title">Site de controle: Lava Bolhas do Bob</h1>
+                    
+                </div>
+            
             
             <span className="cardapio"> Vizualizar planilhas: </span>
             <div className="section-box">

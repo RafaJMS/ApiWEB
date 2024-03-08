@@ -2,4 +2,36 @@
   width: 100%;
   height: 100%;
   text-align: center;
+  min-height: 91.4vh;
+  background-image: url("https://static.vecteezy.com/ti/vetor-gratis/p1/25334589-amarelo-esponja-e-amigos-jogando-bolhas-gratis-vetor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.table{
+  background-color:transparent;
+  --bs-table-bg: transparent;
+  --bs-table-border-color: black;
+  width: 60%;
+}
+
+.mask-input{
+  border: none;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+}
+
+.mask-input:disabled{
+  background-color: transparent
+}
+
+.table-box{
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.678);
+  width: 100%;
 }

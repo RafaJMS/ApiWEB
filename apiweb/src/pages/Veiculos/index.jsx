@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-
+import { IMaskInput } from "react-imask"
+import Form from "react-bootstrap/Form";
 
 
 
@@ -20,11 +21,12 @@ async function readVeiculo(){
     return (
         <>
         
-        <div className="veiculos">
+        <div className="table-box">
         <br></br>
         <h2>Tabela Veiculos</h2>
         <br></br>
         <table class="table">
+          
               <thead>
                  <tr>
                    <th scope="col">Id</th>
@@ -43,7 +45,12 @@ async function readVeiculo(){
                    <td>{data.tipo}</td>
                    <td>{data.modelo}</td>
                    <td>{data.placa}</td>
-                   <td>{data.preco}</td>
+                   <td ><Form.Control
+                      as={IMaskInput}
+                      mask="0.000,00"
+                      defaultValue={data.preco}
+                      className="mask-input"
+                      disabled/></td>
                  </tr>
                 </tbody>
                

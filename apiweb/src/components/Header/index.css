@@ -43,9 +43,11 @@ a{
     color: black;
     transition: all 0.3s;
     text-decoration: none;
+    padding: 0.7rem;
 }
 a:hover{
-    color: #F28C0F;
+    background-image: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW9pdHJ2bHF0bG9zMWFob2lhNmNucDNiNWVkZzcyNjRqbmx5aXF0aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/amsQ2HhLt07c494Hsa/giphy.gif");
+    border-radius: 1rem;
     cursor: pointer;
     transform: scale(1.3);
 }

@@ -26,7 +26,7 @@ export default function Funcionario(){
       return (
         <>
         
-        <div className="funcionarios">
+        <div className="table-box">
         <br></br>
         <h2>Tabela Funcionarios</h2>
         <br></br>
@@ -48,19 +48,29 @@ export default function Funcionario(){
                  <tr>
                    <th scope="row">{data.id}</th>
                    <td>{data.nome}</td>
-                   <td><Form.Control
+                   <td className="mask-td"><Form.Control
                       as = {IMaskInput}
                       mask="000.000.000-00"
-                      defaultValue={data.cpf}/></td>
-                    <td> <Form.Control
+                      defaultValue={data.cpf}
+                      className="mask-input"
+                      readOnly
+                      disabled
+                      /></td>
+                    <td className="mask-td"><Form.Control
                       as={IMaskInput}
                       mask="(00) 00000-0000"
                       defaultValue={data.telefone}
-                      width={10}
+                      className="mask-input"
+                      disabled
                     /></td>
                    
                    <td>{data.email}</td>
-                   <td data-mask='0.000'>{data.salario}</td>
+                   <td ><Form.Control
+                      as={IMaskInput}
+                      mask="0.000,00"
+                      defaultValue={data.salario}
+                      className="mask-input"
+                      disabled/></td>
                  </tr> 
                 </tbody>
                
