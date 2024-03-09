@@ -5,7 +5,9 @@ import { Link } from "react-router-dom"
 export default function Home(){
     return(
         <>
+        
             <div className="home-box">
+            <div className="div-section">
                 <div className="front-box">
                     <h1 className="title">Site de controle: Lava Bolhas do Bob</h1>
                     
@@ -20,7 +22,7 @@ export default function Home(){
                 <Link id="section-link" to={"/veiculo"}><span className="section-item">Veiculos</span></Link> 
 
             </div>
-        
+            </div>
             </div>
             
                 

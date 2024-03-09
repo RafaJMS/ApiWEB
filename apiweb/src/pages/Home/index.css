@@ -20,13 +20,14 @@
     text-align: center;
 }
 .cardapio{
-    background-color: black;
     padding: 10px;
-    color: aliceblue;
+    color: black;
     font-size: 27px;
-    border-radius: 1rem;
-    width: 30%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.671);
+    width: 50%;
+    padding: 2rem;
+    background-color: #7fd4ffb4; /* Azul claro */
+    border-radius: 3rem; /* Bordas arredondadas */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 .section-box{
     display: flex;
@@ -39,9 +40,12 @@
     text-decoration: none;
     color: black;
     transition: all 0.3s;
-    padding: 15px;
+    margin: 15px;
     font-size: 23px;
-    margin-block: 5rem;
+    margin-block: 1rem;
+    border: 1px solid;
+    border-radius: 1rem;
+    background-color: #7fd4ffb4;
 }
 
 #section-link:hover{
@@ -49,6 +53,19 @@
     transform: scale(1.2);
     border: 1px solid;
     border-radius: 1rem;
+}
+
+.div-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    margin: 5rem;
+    border-radius: 7rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.671);
+    background-color: rgba(255, 255, 255, 0.363);
+    width: 50%;
 }
 
 
